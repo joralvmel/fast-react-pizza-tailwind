@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import { getTotalCartPrice, getTotalCartQuantity } from './cartSlice';
 import { formatCurrency } from '../../utils/helpers';
 
+/**
+ * Renders the cart overview component.
+ *
+ * @returns {JSX.Element} The cart overview component.
+ */
 function CartOverview() {
   const totalCartQuantity = useSelector(getTotalCartQuantity);
   const totalCartPrice = useSelector(getTotalCartPrice);

@@ -3,6 +3,11 @@ import Loader from './Loader';
 import CartOverview from '../features/cart/CartOverview';
 import { Outlet, useNavigation } from 'react-router-dom';
 
+/**
+ * Renders the layout for the application.
+ *
+ * @returns {JSX.Element} The rendered layout component.
+ */
 function AppLayout() {
   const navigation = useNavigation();
   const isLoading = navigation.state === 'loading';

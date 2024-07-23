@@ -6,6 +6,11 @@ import { clearCart, getCart } from './cartSlice';
 import { getUsername } from '../user/userSlice';
 import EmptyCart from './EmptyCart';
 
+/**
+ * Renders the Cart component.
+ *
+ * @returns {JSX.Element} The rendered Cart component.
+ */
 function Cart() {
   const username = useSelector(getUsername);
   const cart = useSelector(getCart);

@@ -11,6 +11,11 @@ import Order, { loader as orderLoader } from './features/order/Order';
 import { action as updateOrderAction } from './features/order/UpdateOrder';
 import AppLayout from './ui/AppLayout';
 
+/**
+ * Router configuration for the application.
+ *
+ * @type {BrowserRouter}
+ */
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -44,6 +49,11 @@ const router = createBrowserRouter([
   },
 ]);
 
+/**
+ * Renders the main application component.
+ *
+ * @returns {JSX.Element} The rendered App component.
+ */
 function App() {
   return <RouterProvider router={router} />;
 }

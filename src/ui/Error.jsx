@@ -1,6 +1,11 @@
 import { useRouteError } from 'react-router-dom';
 import LinkButton from './LinkButton';
 
+/**
+ * Renders an error message when something goes wrong.
+ *
+ * @returns {JSX.Element} The rendered Error component.
+ */
 function Error() {
   const error = useRouteError();
   console.log(error);

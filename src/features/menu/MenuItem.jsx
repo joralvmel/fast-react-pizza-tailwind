@@ -5,6 +5,13 @@ import { addItem, getCurrentQuantityById } from '../cart/cartSlice';
 import DeleteItem from '../cart/DeleteItem';
 import UpdateItemQuantity from '../cart/UpdateItemQuantity';
 
+/**
+ * Renders a menu item component.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object} props.pizza - The pizza object containing information about the menu item.
+ * @returns {JSX.Element} The rendered MenuItem component.
+ */
 function MenuItem({ pizza }) {
   const dispatch = useDispatch();
 
@@ -14,6 +21,9 @@ function MenuItem({ pizza }) {
 
   const isInCart = currentQuantity > 0;
 
+  /**
+   * Handles adding an item to the cart.
+   */
   function handleAddToCart() {
     const newItem = {
       pizzaId: id,

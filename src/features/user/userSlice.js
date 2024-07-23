@@ -1,12 +1,23 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getAddress } from '../../services/apiGeocoding';
 
+/**
+ * Retrieves the current position of the user.
+ * @returns {Promise<Position>} A promise that resolves with the user's position.
+ */
 function getPosition() {
   return new Promise(function (resolve, reject) {
     navigator.geolocation.getCurrentPosition(resolve, reject);
   });
 }
 
+/**
+ * Fetches the user's address using geolocation and reverse geocoding.
+ *
+ * @async
+ * @function fetchAddress
+ * @returns {Promise<Object>} A promise that resolves to an object containing the user's position and address.
+ */
 export const fetchAddress = createAsyncThunk(
   'user/fetchAddress',
   async function () {
@@ -26,6 +37,22 @@ export const fetchAddress = createAsyncThunk(
   }
 );
 
+/**
+ * Initial state for the user slice.
+ *
+ * @typedef {Object} InitialState
+ * @property {string} username - The username.
+ * @property {string} status - The status of the user.
+ * @property {Object} position - The position of the user.
+ * @property {string} address - The address of the user.
+ * @property {string} error - The error message, if any.
+ */
+
+/**
+ * The initial state for the user slice.
+ *
+ * @type {InitialState}
+ */
 const initialState = {
   username: '',
   status: 'idle',
@@ -34,6 +61,15 @@ const initialState = {
   error: '',
 };
 
+/**
+ * Redux slice for managing user state.
+ *
+ * @typedef {Object} UserSlice
+ * @property {string} name - The name of the slice.
+ * @property {Object} initialState - The initial state of the slice.
+ * @property {Object} reducers - The reducers for updating the state.
+ * @property {Function} extraReducers - Additional reducers for handling asynchronous actions.
+ */
 const userSlice = createSlice({
   name: 'user',
   initialState,
@@ -59,7 +95,23 @@ const userSlice = createSlice({
       }),
 });
 
+/**
+ * Action creator for updating the user's name.
+ * @function updateName
+ * @param {string} newName - The new name to update.
+ * @returns {object} - Redux action object with the type and payload.
+ */
 export const { updateName } = userSlice.actions;
+/**
+ * Reducer function for the user slice.
+ * @module userSlice
+ */
 export default userSlice.reducer;
 
+/**
+ * Retrieves the username from the user state.
+ *
+ * @param {Object} state - The Redux state object.
+ * @returns {string} The username value from the user state.
+ */
 export const getUsername = (state) => state.user.username;

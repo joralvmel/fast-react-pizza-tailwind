@@ -4,6 +4,17 @@ import DeleteItem from './DeleteItem';
 import UpdateItemQuantity from './UpdateItemQuantity';
 import { getCurrentQuantityById } from './cartSlice';
 
+/**
+ * Renders a single item in the cart.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object} props.item - The item object containing information about the pizza.
+ * @param {string} props.item.pizzaId - The ID of the pizza.
+ * @param {string} props.item.name - The name of the pizza.
+ * @param {number} props.item.quantity - The quantity of the pizza.
+ * @param {number} props.item.totalPrice - The total price of the pizza.
+ * @returns {JSX.Element} The rendered component.
+ */
 function CartItem({ item }) {
   const { pizzaId, name, quantity, totalPrice } = item;
 

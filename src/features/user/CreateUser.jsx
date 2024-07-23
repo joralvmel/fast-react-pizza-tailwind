@@ -4,11 +4,21 @@ import { useDispatch } from 'react-redux';
 import { updateName } from './userSlice';
 import { useNavigate } from 'react-router-dom';
 
+/**
+ * Renders a form for creating a user.
+ *
+ * @returns {JSX.Element} The rendered CreateUser component.
+ */
 function CreateUser() {
   const [username, setUsername] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  /**
+   * Handles the form submission for creating a user.
+   *
+   * @param {Event} e - The form submit event.
+   */
   function handleSubmit(e) {
     e.preventDefault();
 

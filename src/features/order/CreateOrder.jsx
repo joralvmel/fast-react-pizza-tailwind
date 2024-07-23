@@ -15,6 +15,13 @@ const isValidPhone = (str) =>
     str
   );
 
+/**
+ * Renders the CreateOrder component.
+ *
+ * This component displays a form for creating a new order. It includes fields for the customer's name, phone number, address, and an option to give the order priority. The form also shows the cart items and the total price of the order.
+ *
+ * @returns {JSX.Element} The CreateOrder component.
+ */
 function CreateOrder() {
   const [withPriority, setWithPriority] = useState(false);
   const {
@@ -139,6 +146,11 @@ function CreateOrder() {
   );
 }
 
+/**
+ * Creates a new order and redirects to the order page.
+ * @param {Object} request - The request object.
+ * @returns {Object|undefined} - An object containing validation errors, or undefined if there are no errors.
+ */
 export async function action({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);

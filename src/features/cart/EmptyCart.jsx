@@ -1,5 +1,10 @@
 import LinkButton from '../../ui/LinkButton';
 
+/**
+ * Renders the component for an empty cart.
+ *
+ * @returns {JSX.Element} The JSX element representing the empty cart component.
+ */
 function EmptyCart() {
   return (
     <div className="px-4 py-3">

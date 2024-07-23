@@ -1,10 +1,20 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+/**
+ * Renders a search form for searching orders by order number.
+ *
+ * @returns {JSX.Element} The rendered SearchOrder component.
+ */
 function SearchOrder() {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
 
+  /**
+   * Handles the form submission for searching orders.
+   *
+   * @param {Event} e - The form submission event.
+   */
   function handleSubmit(e) {
     e.preventDefault();
     if (!query) return;

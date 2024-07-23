@@ -13,6 +13,11 @@ import {
 import { useEffect } from 'react';
 import UpdateOrder from './UpdateOrder';
 
+/**
+ * Renders the Order component.
+ *
+ * @returns {JSX.Element} The rendered Order component.
+ */
 function Order() {
   const order = useLoaderData();
 
@@ -100,6 +105,13 @@ function Order() {
   );
 }
 
+/**
+ * Fetches the order details based on the provided orderId.
+ *
+ * @param {Object} params - The parameters for fetching the order.
+ * @param {string} params.orderId - The ID of the order to fetch.
+ * @returns {Promise<Object>} - A promise that resolves to the order details.
+ */
 export async function loader({ params }) {
   const order = await getOrder(params.orderId);
   return order;

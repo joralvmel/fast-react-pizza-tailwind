@@ -1,5 +1,16 @@
 import { Link } from 'react-router-dom';
 
+/**
+ * Button component.
+ *
+ * @param {Object} props - The component props.
+ * @param {React.ReactNode} props.children - The content of the button.
+ * @param {boolean} [props.disabled] - Whether the button is disabled.
+ * @param {string} [props.to] - The URL to navigate to when the button is clicked (if provided, renders a `Link` component).
+ * @param {string} [props.type] - The type of button (e.g., "primary", "small", "round", "secondary").
+ * @param {Function} [props.onClick] - The function to call when the button is clicked (if provided, renders a `button` element).
+ * @returns {React.ReactNode} The rendered button element.
+ */
 function Button({ children, disabled, to, type, onClick }) {
   const base =
     'inline-block text-sm rounded-full bg-yellow-400 font-semibold uppercase tracking-wide text-stone-800 transition-colors duration-300 hover:bg-yellow-300 focus:bg-yellow-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-offset-2 disabled:cursor-not-allowed';

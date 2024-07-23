@@ -1,3 +1,9 @@
+/**
+ * The main entry point of the React application.
+ * Renders the App component wrapped in a Provider component from react-redux.
+ *
+ * @module Main
+ */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
